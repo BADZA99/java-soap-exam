@@ -1,0 +1,20 @@
+pour les webservices soap soap il y'a é methodes d'implementation
+le contract first et le contract last
+ le contract first est un contrat qui est défini avant l'implémentation du service (utiliser avec spring boot en utilisant un fichier xsd pour faire des config xml)
+le contract last est un contrat qui est défini après l'implémentation du service (utiliser comme ici dans un projet java simple)
+
+dans le modume metier ona
+dao et entity pour la couche d'acces aux donnees
+dto,mapper,service pour la couche metier qui gere les traitements logique
+
+la couche presentaion (soit api rest ,soap (module webservices ici ) ou application web ou ihm  jsp avec servlet)
+
+jdk 17 tomcat 10
+jdk 21 tomcat 11
+
+jdk <= 11 tomcat 9
+
+dans un projet ear (web et ejb)
+le programme parent ic est de type java simple
+
+une fois lance (le projet webservice deploye avec tomcat 10 on clic sur le lien sector soap WS pour obtenir le wsdl on copie cette adreese pour tester avec postman

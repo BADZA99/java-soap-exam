@@ -1,0 +1,78 @@
+package com.exam.metier.entity;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "classes")
+public class Classes {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "class_name", nullable = false)
+    private String className;
+
+    @Column(name = "description")
+    private String description;
+
+    @ManyToOne
+    @JoinColumn(name = "sector_id", nullable = false)
+    private Sectors sector;
+
+    @Column(name = "className", nullable = false)
+    private String className1;
+
+    public String getClassName1() {
+        return className1;
+    }
+
+    public void setClassName1(String className1) {
+        this.className1 = className1;
+    }
+
+    // Default constructor
+    public Classes() {
+    }
+
+    // Parameterized constructor
+    public Classes(Long id, String className, String description, Sectors sector) {
+        this.id = id;
+        this.className = className;
+        this.description = description;
+        this.sector = sector;
+    }
+
+    // Getters and Setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getClassName() {
+        return className;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Sectors getSector() {
+        return sector;
+    }
+
+    public void setSector(Sectors sector) {
+        this.sector = sector;
+    }
+}
