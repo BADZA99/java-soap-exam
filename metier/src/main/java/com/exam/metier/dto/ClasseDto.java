@@ -9,10 +9,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ClasseDto implements Serializable {
-  
 
     @XmlElement(name = "id", required = true)
-    private Long id;
+    private int id;
 
     @XmlElement(name = "className", required = true)
     private String className;
@@ -21,14 +20,13 @@ public class ClasseDto implements Serializable {
     private String description;
 
     @XmlElement(name = "sectorId")
-    private Long sectorId;
+    private int sectorId;
 
     public ClasseDto() {
-        	super();
+        super();
     }
 
-    public ClasseDto(Long id, String className, String description, Long sectorId) {
-        	super();
+    public ClasseDto(int id, String className, String description, int sectorId) {
         this.id = id;
         this.className = className;
         this.description = description;
@@ -36,11 +34,11 @@ public class ClasseDto implements Serializable {
     }
 
     // Getters and Setters
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -60,11 +58,11 @@ public class ClasseDto implements Serializable {
         this.description = description;
     }
 
-    public Long getSectorId() {
+    public int getSectorId() {
         return sectorId;
     }
 
-    public void setSectorId(Long sectorId) {
+    public void setSectorId(int sectorId) {
         this.sectorId = sectorId;
     }
 }

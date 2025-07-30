@@ -8,7 +8,7 @@ public class Classes {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     @Column(name = "class_name", nullable = false)
     private String className;
@@ -36,7 +36,7 @@ public class Classes {
     }
 
     // Parameterized constructor
-    public Classes(Long id, String className, String description, Sectors sector) {
+    public Classes(int id, String className, String description, Sectors sector) {
         this.id = id;
         this.className = className;
         this.description = description;
@@ -44,11 +44,11 @@ public class Classes {
     }
 
     // Getters and Setters
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

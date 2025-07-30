@@ -8,11 +8,11 @@ public interface IClasseDao {
 
     void updateClasse(Classes classe);
 
-    void deleteClasse(Long id);
+    void deleteClasse(int id);
 
     List<Classes> getAllClasses();
 
     List<Classes> getClassesBySector(Long sectorId);
 
-    Classes getClasseById(Long id);
+    Classes getClasseById(int id);
 }

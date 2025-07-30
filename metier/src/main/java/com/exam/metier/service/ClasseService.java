@@ -34,7 +34,7 @@ public class ClasseService implements IClasseService {
     }
 
     @Override
-    public void deleteClasse(Long id) {
+    public void deleteClasse(int id) {
         Classes classe = classeDao.getClasseById(id);
         if (classe == null) {
             throw new ClasseNotFoundException("Classe not found");
@@ -57,7 +57,7 @@ public class ClasseService implements IClasseService {
     }
 
     @Override
-    public ClasseDto getClasseById(Long id) {
+    public ClasseDto getClasseById(int id) {
         Classes classe = classeDao.getClasseById(id);
         if (classe == null) {
             throw new ClasseNotFoundException("Classe not found");

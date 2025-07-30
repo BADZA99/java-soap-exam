@@ -11,7 +11,7 @@ import jakarta.jws.WebService;
 public interface SectorWebService {
 
     @WebMethod(operationName = "getSector")
-    SectorDto get(@WebParam(name = "id") Long id);
+    SectorDto get(@WebParam(name = "id") int id);
 
     @WebMethod(operationName = "allSectors")
     List<SectorDto> all();

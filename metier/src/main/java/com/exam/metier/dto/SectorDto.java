@@ -13,7 +13,7 @@ public class SectorDto implements Serializable {
 
 
     @XmlElement(name = "id", required = true)
-    private Long id;
+    private int id;
 
     @XmlElement(name = "name", required = true)
     private String name;
@@ -25,18 +25,18 @@ public class SectorDto implements Serializable {
         	super();
     }
 
-    public SectorDto(Long id, String name) {
+    public SectorDto(int id, String name) {
         	super();
         this.id = id;
         this.name = name;
     }
 
     // Getters and Setters
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

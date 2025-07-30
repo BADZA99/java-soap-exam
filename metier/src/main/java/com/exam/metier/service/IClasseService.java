@@ -8,11 +8,11 @@ public interface IClasseService {
 
     void updateClasse(ClasseDto classeDto);
 
-    void deleteClasse(Long id);
+    void deleteClasse(int id);
 
     List<ClasseDto> getAllClasses();
 
     List<ClasseDto> getClassesBySector(Long sectorId);
 
-    ClasseDto getClasseById(Long id);
+    ClasseDto getClasseById(int id);
 }

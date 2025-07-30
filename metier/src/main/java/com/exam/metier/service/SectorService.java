@@ -33,7 +33,7 @@ public class SectorService implements ISectorService {
     }
 
     @Override
-    public void deleteSector(Long id) {
+    public void deleteSector(int id) {
         Sectors sector = sectorDao.getSectorById(id);
         if (sector == null) {
             throw new SectorNotFoundException("Sector not found");
@@ -43,13 +43,15 @@ public class SectorService implements ISectorService {
 
     @Override
     public List<SectorDto> getAllSectors() {
-        return sectorDao.getAllSectors().stream()
-                .map(SectorMapper::toDto)
-                .collect(Collectors.toList());
+        List<Sectors> sectors = sectorDao.getAllSectors();
+        System.out.println("Secteurs récupérés dans SectorService : " + sectors);
+        return sectors.stream()
+                      .map(sector -> new SectorDto(sector.getId(), sector.getName()))
+                      .collect(Collectors.toList());
     }
 
     @Override
-    public SectorDto getSectorById(Long id) {
+    public SectorDto getSectorById(int id) {
         Sectors sector = sectorDao.getSectorById(id);
         if (sector == null) {
             throw new SectorNotFoundException("Sector not found");

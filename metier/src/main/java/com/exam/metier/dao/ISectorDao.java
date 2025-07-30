@@ -8,9 +8,9 @@ public interface ISectorDao {
 
     void updateSector(Sectors sector);
 
-    void deleteSector(Long id);
+    void deleteSector(int id);
 
     List<Sectors> getAllSectors();
 
-    Sectors getSectorById(Long id);
+    Sectors getSectorById(int id);
 }

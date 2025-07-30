@@ -2,23 +2,24 @@ package com.groupeisi.webservice.service;
 
 import java.util.List;
 
+import com.exam.metier.dao.ClasseDao;
 import com.exam.metier.dto.ClasseDto;
+import com.exam.metier.service.ClasseService;
 import com.exam.metier.service.IClasseService;
 import jakarta.jws.WebMethod;
-import jakarta.jws.WebParam;
 import jakarta.jws.WebService;
-import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.jws.WebParam;
 
-@WebService
+@WebService(endpointInterface = "com.groupeisi.webservice.service.ClasseWebService")
 public class ClasseWebServiceImpl implements ClasseWebService {
 
     private final IClasseService classeService;
 
     // No-argument constructor
     public ClasseWebServiceImpl() {
-        // Optionally initialize classeService with a default implementation
-        // Example: this.classeService = new DefaultClasseService();
-        this.classeService = null; // or some default instance
+        // Initialize classeService with a default implementation
+        this.classeService = new ClasseService(new ClasseDao());
+        // Replace with actual implementation
     }
 
     public ClasseWebServiceImpl(IClasseService classeService) {
@@ -30,7 +31,7 @@ public class ClasseWebServiceImpl implements ClasseWebService {
     @Override
     @WebMethod(operationName = "getClasse")
     public ClasseDto get(@WebParam(name = "id") Long idClasse) {
-        return classeService.getClasseById(idClasse);
+        return classeService.getClasseById(idClasse.intValue());
     }
 
     @Override
@@ -39,10 +40,19 @@ public class ClasseWebServiceImpl implements ClasseWebService {
         return classeService.getAllClasses();
     }
 
-    @Override
-    @WebMethod(operationName = "saveClasse")
-    public ClasseDto save(@WebParam(name = "classeDto") ClasseDto classeDto) {
-        classeService.addClasse(classeDto) ;
-        return classeDto;
-    }
+    //@Override
+    //@WebMethod(operationName = "saveClasse")
+    //public ClasseDto save(@WebParam(name = "classeDto") ClasseDto classeDto) {
+        //if (classeDto == null || classeDto.getClassName() == null || classeDto.getClassName().isEmpty()) {
+            //throw new IllegalArgumentException("Class name is required");
+        //}
+
+        //if (classeDto.getSectorId() == null) {
+            //throw new IllegalArgumentException("Sector ID is required");
+        //}
+
+        //classeService.addClasse(classeDto);
+        //classeDto.setDescription("Class saved successfully");
+        //return classeDto;
+    //}
 }

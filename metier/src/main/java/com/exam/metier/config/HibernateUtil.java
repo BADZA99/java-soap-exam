@@ -9,6 +9,8 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
 import com.exam.metier.entity.UserEntity;
+import com.exam.metier.entity.Classes;
+import com.exam.metier.entity.Sectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -69,11 +71,13 @@ public class HibernateUtil {
 
 				configuration.setProperties(settings);
 				configuration.addAnnotatedClass(UserEntity.class);
- 
+				configuration.addAnnotatedClass(Sectors.class);
+				configuration.addAnnotatedClass(Classes.class);
+
 				ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 						.applySettings(configuration.getProperties()).build();
  				sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-				
+
  				return sessionFactory;
 
 			} catch (Exception e) {

@@ -4,12 +4,12 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "sectors")
+@Table(name = "Sectors")
 public class Sectors {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     @Column(name = "name", nullable = false)
     private String name;
@@ -22,19 +22,15 @@ public class Sectors {
     }
 
     // Parameterized constructor
-    public Sectors(Long id, String name, List<Classes> classes) {
+    public Sectors(int id, String name, List<Classes> classes) {
         this.id = id;
         this.name = name;
         this.classes = classes;
     }
 
     // Getters and Setters
-    public Long getId() {
+    public int getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {

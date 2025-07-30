@@ -8,9 +8,9 @@ public interface ISectorService {
 
     void updateSector(SectorDto sectorDto);
 
-    void deleteSector(Long id);
+    void deleteSector(int id);
 
     List<SectorDto> getAllSectors();
 
-    SectorDto getSectorById(Long id);
+    SectorDto getSectorById(int id);
 }

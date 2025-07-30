@@ -11,7 +11,6 @@ public class SectorMapper {
 
     public static Sectors toEntity(SectorDto dto) {
         Sectors sector = new Sectors();
-        sector.setId(dto.getId());
         sector.setName(dto.getName());
         return sector;
     }
