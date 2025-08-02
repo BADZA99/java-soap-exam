@@ -30,8 +30,10 @@ public class ClasseWebServiceImpl implements ClasseWebService {
 
     @Override
     @WebMethod(operationName = "getClasse")
-    public ClasseDto get(@WebParam(name = "id") Long idClasse) {
-        return classeService.getClasseById(idClasse.intValue());
+    public ClasseDto get(@WebParam(name = "id") int idClasse) {
+        ClasseDto classeDto = classeService.getClasseById(idClasse);
+        System.out.println("Returning ClasseDto: " + classeDto);
+        return classeDto;
     }
 
     @Override

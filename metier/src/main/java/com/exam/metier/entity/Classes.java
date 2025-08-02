@@ -20,16 +20,9 @@ public class Classes {
     @JoinColumn(name = "sector_id", nullable = false)
     private Sectors sector;
 
-    @Column(name = "className", nullable = false)
-    private String className1;
 
-    public String getClassName1() {
-        return className1;
-    }
 
-    public void setClassName1(String className1) {
-        this.className1 = className1;
-    }
+
 
     // Default constructor
     public Classes() {

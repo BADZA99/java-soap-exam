@@ -18,3 +18,7 @@ dans un projet ear (web et ejb)
 le programme parent ic est de type java simple
 
 une fois lance (le projet webservice deploye avec tomcat 10 on clic sur le lien sector soap WS pour obtenir le wsdl on copie cette adreese pour tester avec postman
+
+
+
+code 201 pour sector save

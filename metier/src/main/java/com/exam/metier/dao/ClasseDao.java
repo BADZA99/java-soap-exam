@@ -8,7 +8,7 @@ import com.exam.metier.config.HibernateUtil;
 
 public class ClasseDao implements IClasseDao {
 
-    private Session session = HibernateUtil.getSessionFactory().openSession();
+    private final Session session = HibernateUtil.getSessionFactory().openSession();
 
     @Override
     public void addClasse(Classes classe) {
@@ -40,7 +40,7 @@ public class ClasseDao implements IClasseDao {
     }
 
     @Override
-    public List<Classes> getClassesBySector(Long sectorId) {
+    public List<Classes> getClassesBySector(int sectorId) {
         return session.createQuery("from Classes where sector.id = :sectorId", Classes.class)
                       .setParameter("sectorId", sectorId)
                       .list();

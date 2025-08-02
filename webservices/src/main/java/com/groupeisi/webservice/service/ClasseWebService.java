@@ -9,7 +9,7 @@ import jakarta.jws.WebParam;
 @WebService
 public interface ClasseWebService {
     @WebMethod(operationName = "getClasse")
-    ClasseDto get(@WebParam(name = "id") Long idClasse);
+    ClasseDto get(@WebParam(name = "id") int idClasse);
 
     @WebMethod(operationName = "allClasses")
     List<ClasseDto> all();

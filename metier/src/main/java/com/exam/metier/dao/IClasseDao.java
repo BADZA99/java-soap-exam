@@ -12,7 +12,7 @@ public interface IClasseDao {
 
     List<Classes> getAllClasses();
 
-    List<Classes> getClassesBySector(Long sectorId);
+    List<Classes> getClassesBySector(int sectorId);
 
     Classes getClasseById(int id);
 }

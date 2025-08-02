@@ -25,6 +25,12 @@ public class SectorWebServiceImpl implements SectorWebService {
     }
 
     @Override
+    @WebMethod(operationName = "getSector")
+    public SectorDto get(@WebParam(name = "id") int id) {
+        return sectorService.getSectorById(id);
+    }
+
+    @Override
     @WebMethod(operationName = "allSectors")
     public List<SectorDto> all() {
         System.out.println("Méthode allSectors appelée dans SectorWebServiceImpl");
@@ -36,26 +42,7 @@ public class SectorWebServiceImpl implements SectorWebService {
     @Override
     @WebMethod(operationName = "saveSector")
     public SectorDto save(@WebParam(name = "sectorDto") SectorDto sectorDto) {
-        try {
-            sectorService.addSector(sectorDto);
-            System.out.println("Sector added successfully: " + sectorDto);
-            return sectorDto;
-        } catch (Exception e) {
-            System.err.println("Error while adding sector: " + e.getMessage());
-            throw new RuntimeException("Error while adding sector: " + e.getMessage());
-        }
-    }
-
-    @Override
-    @WebMethod(operationName = "getSector")
-    public SectorDto get(@WebParam(name = "id") int id) {
-        try {
-            SectorDto sector = sectorService.getSectorById(id);
-            System.out.println("Sector retrieved successfully: " + sector);
-            return sector;
-        } catch (Exception e) {
-            System.err.println("Error while retrieving sector: " + e.getMessage());
-            throw new RuntimeException("Error while retrieving sector: " + e.getMessage());
-        }
+        sectorService.addSector(sectorDto);
+        return sectorDto;
     }
 }

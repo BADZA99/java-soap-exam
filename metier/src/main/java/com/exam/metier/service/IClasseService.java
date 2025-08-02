@@ -12,7 +12,7 @@ public interface IClasseService {
 
     List<ClasseDto> getAllClasses();
 
-    List<ClasseDto> getClassesBySector(Long sectorId);
+    List<ClasseDto> getClassesBySector(int sectorId);
 
     ClasseDto getClasseById(int id);
 }

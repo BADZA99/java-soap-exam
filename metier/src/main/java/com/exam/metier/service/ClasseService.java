@@ -50,7 +50,7 @@ public class ClasseService implements IClasseService {
     }
 
     @Override
-    public List<ClasseDto> getClassesBySector(Long sectorId) {
+    public List<ClasseDto> getClassesBySector(int sectorId) {
         return classeDao.getClassesBySector(sectorId).stream()
                 .map(ClasseMapper::toDto)
                 .collect(Collectors.toList());
