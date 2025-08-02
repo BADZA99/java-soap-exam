@@ -41,7 +41,7 @@
 ### Étapes
 1. Cloner le dépôt :
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/BADZA99/java-soap-exam.git
    ```
 2. Naviguer dans le répertoire du projet :
    ```bash
@@ -78,3 +78,27 @@ Le diagramme de classe ci-dessous représente la structure du projet :
 ![Obtenir un secteur](images/get%20sector%20.png)
 #### Sauvegarder un secteur
 ![Sauvegarder un secteur](images/save%20sector.png)
+#### Tous les classes
+![Tous les classes](images/all%20classes.png)
+
+## Problèmes rencontrés
+### Erreur lors de la sauvegarde d'une classe
+- **Message d'erreur** :
+  ```
+  02-Aug-2025 19:19:37.081 SEVERE [RMI TCP Connection(2)-127.0.0.1] com.sun.xml.ws.transport.http.servlet.WSServletContextListener.parseAdaptersAndCreateDelegate WSSERVLET11 : échec de l'analyse du descripteur d'exécution : jakarta.xml.ws.WebServiceException: class com.groupeisi.webservice.service.jaxws.Save do not have a property of the name classe
+  jakarta.xml.ws.WebServiceException: class com.groupeisi.webservice.service.jaxws.Save do not have a property of the name classe
+  ```
+
+### Erreur lors de la récupération d'une classe
+- **Réponse SOAP** :
+  ```xml
+  <?xml version='1.0' encoding='UTF-8'?>
+  <S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+      <S:Body>
+          <S:Fault xmlns:ns4="http://www.w3.org/2003/05/soap-envelope">
+              <faultcode>S:Server</faultcode>
+              <faultstring>Can not set com.exam.metier.dto.SectorDto field com.groupeisi.webservice.service.jaxws.GetResponse._return to com.exam.metier.dto.ClasseDto</faultstring>
+          </S:Fault>
+      </S:Body>
+  </S:Envelope>
+  ```
