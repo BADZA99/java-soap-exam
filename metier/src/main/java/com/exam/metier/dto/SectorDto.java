@@ -1,21 +1,21 @@
 package com.exam.metier.dto;
 
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
-@XmlRootElement
+@XmlRootElement(name = "sector")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class SectorDto implements Serializable {
 
 
-    @XmlElement(name = "id", required = true)
+    @XmlElement(required = true)
     private int id;
 
-    @XmlElement(name = "name", required = true)
+    @XmlElement(required = true)
     private String name;
 
     @XmlElement(name = "classes")

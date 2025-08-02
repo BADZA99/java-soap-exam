@@ -4,7 +4,7 @@ import com.exam.metier.entity.Classes;
 import java.util.List;
 
 public interface IClasseDao {
-    void addClasse(Classes classe);
+    Classes addClasse(Classes classe);
 
     void updateClasse(Classes classe);
 

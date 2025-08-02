@@ -11,10 +11,11 @@ public class ClasseDao implements IClasseDao {
     private final Session session = HibernateUtil.getSessionFactory().openSession();
 
     @Override
-    public void addClasse(Classes classe) {
+    public Classes addClasse(Classes classe) {
         Transaction transaction = session.beginTransaction();
         session.save(classe);
         transaction.commit();
+        return classe;
     }
 
     @Override

@@ -4,7 +4,7 @@ import com.exam.metier.dto.ClasseDto;
 import java.util.List;
 
 public interface IClasseService {
-    void addClasse(ClasseDto classeDto);
+    ClasseDto addClasse(ClasseDto classeDto);
 
     void updateClasse(ClasseDto classeDto);
 

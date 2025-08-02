@@ -17,9 +17,10 @@ public class ClasseService implements IClasseService {
     }
 
     @Override
-    public void addClasse(ClasseDto classeDto) {
+    public ClasseDto addClasse(ClasseDto classeDto) {
         Classes classe = ClasseMapper.toEntity(classeDto);
-        classeDao.addClasse(classe);
+        classe = classeDao.addClasse(classe);
+        return ClasseMapper.toDto(classe);
     }
 
     @Override
